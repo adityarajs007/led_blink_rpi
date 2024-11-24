@@ -24,7 +24,7 @@ jobs:
 
     - name: Build and run on Raspberry Pi
       run: |
-        ssh adity@192.168.0.103 << EOF
-        g++ /home/adity/projects/counter_project/counter.cpp -o /home/adity/projects/counter_project
-        sudo /home/adity/projects/counter_project
+        ssh adity@192.168.0.103 << 'EOF'
+        g++ /home/adity/projects/counter_project/counter.cpp -o /home/adity/projects/counter_project/counter
+        /home/adity/projects/counter_project/counter
         EOF
