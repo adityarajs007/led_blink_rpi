@@ -28,3 +28,7 @@ jobs:
         g++ /home/adity/projects/counter_project/counter.cpp -o /home/adity/projects/counter_project/counter
         /home/adity/projects/counter_project/counter
         EOF
+
+    - name: Trigger pull and run script
+      run: |
+        ssh adity@192.168.0.103 "bash /home/adity/projects/counter_project/pull_and_run.sh"
