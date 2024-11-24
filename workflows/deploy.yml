@@ -20,11 +20,11 @@ jobs:
 
     - name: Copy code to Raspberry Pi
       run: |
-        scp led_blink.cpp adity@192.168.0.103:/home/adity/led_blink.cpp
+        scp counter.cpp adity@192.168.0.103:/home/adity/projects/counter_project/counter.cpp
 
     - name: Build and run on Raspberry Pi
       run: |
         ssh adity@192.168.0.103 << EOF
-        g++ /home/adity/led_blink.cpp -o /home/adity/led_blink
-        sudo /home/adity/led_blink
+        g++ /home/adity/projects/counter_project/counter.cpp -o /home/adity/projects/counter_project
+        sudo /home/adity/projects/counter_project
         EOF
