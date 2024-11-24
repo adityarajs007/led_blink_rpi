@@ -14,9 +14,10 @@ jobs:
       uses: actions/checkout@v3
 
     - name: Set up SSH
-      uses: webfactory/ssh-agent@v0.5.3
+      uses: webfactory/ssh-agent@v0.6.0
       with:
         ssh-private-key: ${{ secrets.RPI_SSH_KEY }}
+    
 
     - name: Copy code to Raspberry Pi
       run: |
