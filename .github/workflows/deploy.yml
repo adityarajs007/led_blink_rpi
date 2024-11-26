@@ -17,10 +17,6 @@ jobs:
       uses: webfactory/ssh-agent@v0.6.0
       with:
         ssh-private-key: ${{ secrets.RPI_SSH_KEY }}
-        
-    - name: Test SSH Connection
-        run: |
-          ssh -o StrictHostKeyChecking=no adity@192.168.0.103 "echo 'SSH connection successful'"
 
     - name: Copy code to Raspberry Pi
       run: |
