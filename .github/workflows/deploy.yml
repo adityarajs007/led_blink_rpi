@@ -20,7 +20,7 @@ jobs:
 
     - name: Copy code to Raspberry Pi
       run: |
-        scp -o StrictHostKeyChecking=no -P 19703 counter.cpp adity@2.tcp.us-cal-1.ngrok.io:/home/adity/projects/counter_project/counter.cpp
+        scp -o StrictHostKeyChecking=no -P 17501 counter.cpp adity@2.tcp.us-cal-1.ngrok.io:/home/adity/projects/counter_project/counter.cpp
 
     - name: Build and run on Raspberry Pi
       run: |
