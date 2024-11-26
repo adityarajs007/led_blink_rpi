@@ -11,3 +11,4 @@ g++ -I./include src/main.cpp src/counter.cpp -o counter_app
 
 # Run the compiled application in the Raspberry Pi terminal
 DISPLAY=:0 lxterminal -e ./counter_app
+
