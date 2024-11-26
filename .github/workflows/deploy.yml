@@ -20,8 +20,8 @@ jobs:
 
     - name: Copy code to Raspberry Pi
       run: |
-        scp -o StrictHostKeyChecking=no -P 11851 counter.cpp adity@2.tcp.us-cal-1.ngrok.io:/home/adity/projects/counter_project/counter.cpp
+        scp -o StrictHostKeyChecking=no -P 11859 counter.cpp adity@2.tcp.us-cal-1.ngrok.io:/home/adity/projects/counter_project/counter.cpp
 
     - name: Build and run on Raspberry Pi
       run: |
-        ssh -o StrictHostKeyChecking=no adity@2.tcp.us-cal-1.ngrok.io -p 11851 "g++ /home/adity/projects/counter_project/counter.cpp -o /home/adity/projects/counter_project/counter && DISPLAY=:0 lxterminal -e '/home/adity/projects/counter_project/counter'"
+        ssh -o StrictHostKeyChecking=no adity@2.tcp.us-cal-1.ngrok.io -p 11859 "g++ /home/adity/projects/counter_project/counter.cpp -o /home/adity/projects/counter_project/counter && DISPLAY=:0 lxterminal -e '/home/adity/projects/counter_project/counter'"
