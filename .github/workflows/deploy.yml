@@ -24,12 +24,4 @@ jobs:
 
     - name: Build and run on Raspberry Pi
       run: |
-        ssh -o StrictHostKeyChecking=no adity@2.tcp.us-cal-1.ngrok.io -p 19703 << 'EOF'
-        g++ /home/adity/projects/counter_project/counter.cpp -o /home/adity/projects/counter_project/counter
-        /home/adity/projects/counter_project/counter
-        EOF
-
-
-    - name: Trigger pull and run script
-      run: |
-        ssh adity@2.tcp.us-cal-1.ngrok.io -p 19703 "bash /home/adity/projects/counter_project/pull_and_run.sh"
+        ssh -o StrictHostKeyChecking=no adity@2.tcp.us-cal-1.ngrok.io -p 19703 "g++ /home/adity/projects/counter_project/counter.cpp -o /home/adity/projects/counter_project/counter && /home/adity/projects/counter_project/counter"
