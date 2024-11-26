@@ -20,15 +20,15 @@ jobs:
 
     - name: Copy code to Raspberry Pi
       run: |
-        scp counter.cpp adity@192.168.0.103:/home/adity/projects/counter_project/counter.cpp
+        scp -P 19703 counter.cpp adity@2.tcp.us-cal-1.ngrok.io:/home/adity/projects/counter_project/counter.cpp
 
     - name: Build and run on Raspberry Pi
       run: |
-        ssh adity@192.168.0.103 << 'EOF'
+        ssh adity@2.tcp.us-cal-1.ngrok.io -p 19703 << 'EOF'
         g++ /home/adity/projects/counter_project/counter.cpp -o /home/adity/projects/counter_project/counter
         /home/adity/projects/counter_project/counter
-        EOF   
+        EOF
 
     - name: Trigger pull and run script
       run: |
-        ssh adity@192.168.0.103 "bash /home/adity/projects/counter_project/pull_and_run.sh"
+        ssh adity@2.tcp.us-cal-1.ngrok.io -p 19703 "bash /home/adity/projects/counter_project/pull_and_run.sh"
