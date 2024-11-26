@@ -19,15 +19,16 @@ jobs:
         ssh-private-key: ${{ secrets.RPI_SSH_KEY }}
 
     - name: Copy code to Raspberry Pi
-      run: |
-        scp -P 19703 counter.cpp adity@2.tcp.us-cal-1.ngrok.io:/home/adity/projects/counter_project/counter.cpp
+       run: |
+        scp -o StrictHostKeyChecking=no -P 19703 counter.cpp adity@2.tcp.us-cal-1.ngrok.io:/home/adity/projects/counter_project/counter.cpp
 
     - name: Build and run on Raspberry Pi
       run: |
-        ssh adity@2.tcp.us-cal-1.ngrok.io -p 19703 << 'EOF'
+        ssh -o StrictHostKeyChecking=no adity@2.tcp.us-cal-1.ngrok.io -p 19703 << 'EOF'
         g++ /home/adity/projects/counter_project/counter.cpp -o /home/adity/projects/counter_project/counter
         /home/adity/projects/counter_project/counter
         EOF
+
 
     - name: Trigger pull and run script
       run: |
